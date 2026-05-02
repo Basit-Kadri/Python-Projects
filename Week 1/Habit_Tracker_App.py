@@ -84,11 +84,14 @@ def show_summary(results):
 
 st.title("🏆 Welcome to your Habit Tracker!")
 
+st.divider()
 name = st.text_input("Enter your name: ")
 
 if name:
-    st.write(f"Welcome, {name}!")
+    st.subheader(f"Welcome, {name}!")
 
+st.divider()
+st.subheader("📝 Today's Habits")
 n = st.number_input("Please enter how many habits you would like to track: ", min_value=1, max_value=10, step=1)
 
 habitz = []
@@ -105,6 +108,7 @@ if all(habitz):
         else:
             results[habit] = "Not Done"
 
+st.divider()
 if st.button("Save"):
     save_habits(results)
     show_summary(results)
@@ -112,22 +116,24 @@ if st.button("Save"):
         streak = calculate_streak(habit)
         st.write(f"🔥 {habit}: {streak} day streak!")
 
-
-
+st.divider()
+st.subheader("📅 View Previous Day")
 selected_date = st.date_input("Would you like to view a previous date?")
 data = load_data()
 date_file = selected_date.strftime("%Y-%m-%d")
-if date_file in data:
-    habit = selected_date
-    st.write(f"Here are your habits for {selected_date}: ")
-    symbols = {"Done": "✓", "Not Done": "✗", "In Progress": "⋯"}
-    for habit, status in data[date_file].items():
-        st.write(f"{symbols[status]} {habit}: {status}")
-else:
-    st.write(f"No data found for {selected_date}")
+if st.button("📅 View the dates"):
+    if date_file in data:
+        habit = selected_date
+        st.write(f"Here are your habits for {selected_date}: ")
+        symbols = {"Done": "✓", "Not Done": "✗", "In Progress": "⋯"}
+        for habit, status in data[date_file].items():
+            st.write(f"{symbols[status]} {habit}: {status}")
+    else:
+        st.write(f"No data found for {selected_date}")
 
+st.divider()
+st.subheader("📊 Weekly Chart")
 if st.button("📊View Weekly Chart"):
-    st.subheader("📊Weekly Habit Chart")
     show_charts()
 
 

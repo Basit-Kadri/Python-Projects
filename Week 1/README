@@ -1,3 +1,9 @@
-## How to run
+## How to run Streamlit app(Habit Tracker)
 cd "/Applications/Python/test file/Python practise exercises/Habit Tracker/Week 1"
 streamlit run Habit_Tracker_App.py
+
+##To make any changes to your Github repository paste this into the terminal:
+cd "/Applications/Python/test file/Python practise exercises/Habit Tracker"
+git add .
+git commit -m "describe what you changed"
+git push
