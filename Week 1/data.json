@@ -1,0 +1,22 @@
+{
+  "2026-04-19": {
+    "Sleep": "Done",
+    "Wakeup": "Done",
+    "Code": "Done"
+  },
+  "2026-04-20": {
+    "Sleep": "Done",
+    "Wakeup": "Done",
+    "Code": "Done"
+  },
+  "2026-04-22": {
+    "Sleep": "Not Done",
+    "Wakeup": "Done",
+    "Code": "Done"
+  },
+  "2026-04-30": {
+    "Eat": "Done",
+    "Sleep": "Not Done",
+    "Drink": "Done"
+  }
+}

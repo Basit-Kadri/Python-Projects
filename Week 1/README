@@ -1,0 +1,3 @@
+## How to run
+cd "/Applications/Python/test file/Python practise exercises/Habit Tracker/Week 1"
+streamlit run Habit_Tracker_App.py
